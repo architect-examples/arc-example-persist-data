@@ -2,9 +2,12 @@
 module.exports = function _auth({url}) {
   if (url.includes('logout')) {
     return `
-<form action=${url} method=post class="float-right m-4">
-  <button type=submit class="btn btn-primary">Logout</button>
-</form>`
+    <nav class="navbar navbar-light bg-light justify-content-end">
+      <form action=${url} method=post>
+        <button type=submit class="btn btn-primary">Logout</button>
+      </form>
+    </nav>
+    `
   }
   else {
     return `
