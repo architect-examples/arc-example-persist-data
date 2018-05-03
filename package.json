@@ -1,0 +1,19 @@
+{
+  "name": "arc-example-notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "create": "AWS_PROFILE=smallwins AWS_REGION=us-east-1 arc-create",
+    "start": "nodemon --watch src -e js --exec NODE_ENV=testing AWS_PROFILE=smallwins AWS_REGION=us-east-1 arc-sandbox",
+    "repl": "ARC_LOCAL=yas NODE_ENV=testing arc-repl"
+  },
+  "keywords": [],
+  "author": "Brian LeRoux <b@brian.io>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@architect/data": "^2.0.2",
+    "@architect/workflows": "^2.6.1",
+    "nodemon": "^1.17.3"
+  }
+}
