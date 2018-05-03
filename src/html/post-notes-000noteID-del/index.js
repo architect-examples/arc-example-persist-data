@@ -1,7 +1,13 @@
-var arc = require('@architect/functions')
+// src/html/post-notes-000noteID-del/index.js
+let arc = require('@architect/functions')
+let data = require('@architect/data')
 
-function route(req, res) {
-  console.log(JSON.stringify(req, null, 2))
+async function route(req, res) {
+  let noteID = req.params.noteID
+  let accountID = req.session.account.accountID
+  await data.notes.delete({
+    noteID, accountID
+  })
   res({
     location: req._url('/')
   })

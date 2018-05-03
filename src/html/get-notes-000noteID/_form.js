@@ -22,6 +22,9 @@ module.exports = function form({noteID, href, title, body}) {
       </div>
       <button type=submit class="btn btn-primary float-right">Save</button>
     </form>
+    <form action=${href}/del method=post>
+      <button type=submit class="btn btn-danger float-right mr-2">Delete</button>
+    </form>
   </div>
 </div>
 `
