@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@architect/data": "^2.0.2",
-    "@architect/workflows": "^2.6.1",
+    "@architect/workflows": "^3.1.9",
     "nodemon": "^1.17.3"
   }
 }
