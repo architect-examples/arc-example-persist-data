@@ -1,14 +1,14 @@
-// src/html/post-notes/index.js
+// src/http/post-notes-000noteID/index.js
 let arc = require('@architect/functions')
 let data = require('@architect/data')
-let Hashids = require('hashids')
-let hashids = new Hashids
+let auth = require('@architect/shared/middleware/auth')
+let url = arc.http.helpers.url
 
 async function route(req, res) {
   try {
     let note = req.body
     note.accountID = req.session.account.accountID
-    note.noteID = hashids.encode(Date.now())
+    note.updated = new Date(Date.now()).toISOString()
     // save the note
     let result = await data.notes.put(note)
     // log it to stdout
@@ -18,8 +18,8 @@ async function route(req, res) {
     console.log(e)
   }
   res({
-    location: req._url('/')
+    location: url('/')
   })
 }
 
-exports.handler = arc.html.post(route)
+exports.handler = arc.http(auth, route)

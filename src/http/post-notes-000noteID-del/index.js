@@ -1,6 +1,7 @@
-// src/html/post-notes-000noteID-del/index.js
+// src/http/post-notes-000noteID-del/index.js
 let arc = require('@architect/functions')
 let data = require('@architect/data')
+let url = arc.http.helpers.url
 
 async function route(req, res) {
   let noteID = req.params.noteID
@@ -9,8 +10,8 @@ async function route(req, res) {
     noteID, accountID
   })
   res({
-    location: req._url('/')
+    location: url('/')
   })
 }
 
-exports.handler = arc.html.post(route)
+exports.handler = arc.http(route)

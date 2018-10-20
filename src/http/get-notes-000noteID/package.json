@@ -1,0 +1,7 @@
+{
+  "name": "testdata-get-notes-000noteID",
+  "dependencies": {
+    "@architect/data": "^2.0.5",
+    "@architect/functions": "^1.9.7"
+  }
+}

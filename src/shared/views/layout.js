@@ -4,7 +4,7 @@ let auth = require('./_header')
 module.exports = function layout(params={}) {
   let body = params.body || 'hello world'
   let title = params.title || '@architect/data demo'
-  let url = params.url
+  let url = params.path
   return `<!doctype HtMl>
 <html lang=en>
 <head>
