@@ -1,8 +1,8 @@
 {
   "name": "testdata-post-notes",
   "dependencies": {
-    "@architect/data": "^2.0.5",
-    "@architect/functions": "^1.9.7",
+    "@architect/data": "^2.0.8",
+    "@architect/functions": "^1.9.12",
     "hashids": "^1.2.2"
   }
 }
